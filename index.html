@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="icon" href="favicon.ico" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="/">
+        <img src="book.svg" alt="Logo" class="logo" />
+        Book Catalog
+      </a>
+
+      <nav>
+        <a href="/catalog"> Catalog </a>
+
+        <a href="/authors"> Authors </a>
+
+        <a href="/about"> About Us </a>
+      </nav>
+
+      <button class="login">Log In</button>
+    </header>
+
+    <main>
+      <section class="search_block">
+        <h1>Book Catalog</h1>
+
+        <form class="seach">
+          <label for="search"> Book Title </label>
+
+          <input id="search" type="text" placeholder="Search a book..." />
+
+          <label for="genre"> Genre </label>
+
+          <select id="genre">
+            <option value="all">Genre</option>
+
+            <option value="fantasy">Fantasy</option>
+          </select>
+
+          <button type="submit">Search</button>
+        </form>
+      </section>
+
+      <section class="catalog">
+        <article class="book">
+          <img src="dune.jpg" alt="Cover of the book «Dune»" class="book_img" />
+
+          <h2 class="book_name">Dune</h2>
+
+          <p class="book_author">F. Herbert</p>
+        </article>
+
+        <article class="book">
+          <img src="1984.jpg" alt="Cover of the book «1984»" class="book_img" />
+
+          <h2 class="book_name">1984</h2>
+
+          <p class="book_author">G. Orwell</p>
+        </article>
+
+        <article class="book">
+          <img src="hamlet.jpg" alt="Cover of the book «Hamlet»" class="book_img" />
+
+          <h2 class="book_name">Hamlet</h2>
+
+          <p class="book_author">W. Shakespeare</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2024 Book Catalog. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
