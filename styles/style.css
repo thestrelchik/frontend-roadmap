@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+
+:root {
+    --white: #ffffff;
+    --green: #27694d;
+    --yellow: #daa520;
+    --red: #ef4444;
+    --brown: #383129;
+    --black: #2a2622;
+    
+    --title: #2b2622;
+    --text: #7c736a;
+    --border: #E7E2DA;
+
+    --background: #f7f4ef;
+    --card: #fcfaf7;
+    --secondary: #eeebe4;
+    --shadow: #c4b8a8;
+    --favorite: #eaf0ed;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    background: var(--background);
+    font-family: "Source Sans 3", sans-serif;
+    color: var(--title);
+}
+
+/* header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px 32px;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+}
+.header > a {
+    font-family: "Playfair Display", serif;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--title);
+}
+
+.logo {
+    width: 40px;
+}
+
+nav {
+    display: flex;
+    gap: 8px 20px;
+    margin-left: auto;
+}
+nav a {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--brown);
+}
+nav a:hover {
+    color: var(--green);
+}
+
+.btn {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--green);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--secondary);
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+.btn:hover {
+    border: 1px solid  var(--green);
+    color: var(--green);
+    background-color: var(--secondary);
+}
+.login {
+    padding: 8px 16px;
+}
+
+
+
+/* Main */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    column-gap: 20px;
+    width: 1400px;
+    max-width: 100%;
+    margin-inline: auto;
+    padding: 48px 20px;
+}
+
+/* Seacrh block */
+.search {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 640px;
+    max-width: 100%;
+    margin-top: 28px;
+    margin-inline: auto;
+}
+.search_block {
+    width: 100%;
+    margin-bottom: 48px;
+    text-align: center;
+}
+.search_block h1 {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--title);
+}
+.search label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    
+}
+
+.search input {
+    flex: 1 1 220px;
+    min-width: 0;
+    padding: 14px 14px 14px 44px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--white);
+    background-image: url("/assets/search.svg");
+    background-repeat: no-repeat;
+    background-position: 16px center;
+    background-size: 20px;
+    color: var(--title);
+}
+.search input::placeholder {
+    color: var(--text);
+    opacity: 1;
+}
+.search select {
+    flex: 0 1 140px;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--white);
+    color: var(--text);
+    cursor: pointer;
+}
+.search button {
+    padding: 15px 20px;
+}
+
+.search input:focus,
+.search select:focus {
+    outline: 1px solid var(--green);
+    
+}
+
+
+/* Catalog */
+
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 220px));
+    justify-content: start;
+    gap: 20px;
+    flex: 1 1 auto;
+    margin-top: 0;
+}
+
+.book {
+    position: relative;
+    border-radius: 16px;
+    background: var(--card);
+    box-shadow: 0 4px 12px var(--shadow);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.4s ease;
+}
+.book:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 22px var(--shadow);
+}
+
+.book_heart {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--white);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.book_heart:hover {
+    background: var(--secondary);
+    transform: scale(1.05);
+}
+
+.book_heart img {
+    width: 16px;
+    height: 16px;
+}
+
+.book_img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.book_name {
+    margin: 12px 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--title);
+}
+
+.book_author {
+    margin: 4px 12px 0;
+    font-size: 14px;
+    color: var(--text);
+}
+
+.book_year {
+    margin: 0 12px 14px;
+    font-size: 12px;
+    color: var(--text);
+}
+
+/* Favorites */
+
+
+.favorites {
+    flex: 0 0 280px;
+    width: 280px;
+    padding: 16px 16px 8px;
+    border-radius: 16px;
+    background: var(--card);
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.favorites_head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.favorites_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--favorite);
+}
+
+.favorites_icon img {
+    width: 16px;
+    height: 16px;
+}
+
+.favorites_title {
+    font-family: "Playfair Display", serif;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--title);
+}
+
+.favorites_count {
+    margin: 2px 0 0;
+    font-size: 13px;
+    color: var(--text);
+}
+
+.favorites_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.favorites_item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.favorites_item:last-child {
+    border-bottom: 0;
+}
+
+.favorites_cover {
+    flex-shrink: 0;
+    width: 36px;
+    height: 52px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.favorites_name {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--title);
+}
+
+.favorites_author,
+.favorites_year {
+    margin: 0;
+    font-size: 12px;
+    color: var(--text);
+}
+
+.favorites_like {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+
+/* fooer */
+
+.footer {
+    padding: 24px 20px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
